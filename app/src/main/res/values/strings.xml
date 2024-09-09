@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Zapcom demo</string>
+    <string name="internet_error">Internet connection is not available. Please try again</string>
+    <string name="api_error">Unable to fetch catalog. Please try again</string>
+    <string name="retry_button">Retry</string>
+    <string name="banner_catalog">Banner catalog</string>
+    <string name="split_banner_catalog">Split Banner catalog</string>
+    <string name="horizontal_catalog">Horizontal Catalog</string>
+    <string name="app_bar_title">Catalog</string>
+</resources>
