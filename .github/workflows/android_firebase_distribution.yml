@@ -28,13 +28,10 @@ jobs:
       - name: list files in output folder
         run: ls -lrt app/build/outputs/apk/release
 
-      - name: list files in intermediate folder
-        run: ls -lrt app/build/intermediates/apk/release
-
       - name: Upload and Distribute App
         uses: wzieba/Firebase-Distribution-Github-Action@v1.5.1
         with:
           serviceCredentialsFileContent: ${{ secrets.CREDENTIAL_FILE_CONTENT }}
           appId: ${{ secrets.FIREBASE_APP_ID }}
-          file: 'app/build/outputs/apk/release/app-release.apk'  # e.g., './build/app/outputs/flutter-apk/app-release.apk'
+          file: app/build/outputs/apk/release/app-release.apk  # e.g., './build/app/outputs/flutter-apk/app-release.apk'
           groups: 'testing-group'  # Optional: distribution groups
