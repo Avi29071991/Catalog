@@ -30,6 +30,5 @@ jobs:
         with:
           serviceCredentialsFileContent: ${{ secrets.CREDENTIAL_FILE_CONTENT }}
           appId: ${{ secrets.FIREBASE_APP_ID }}
-          token: ${{secrets.FIREBASE_TOKEN}}
-          file: 'app/build/intermediates/apk/debug/app-debug.apk'  # e.g., './build/app/outputs/flutter-apk/app-release.apk'
+          file: 'app/build/outputs/apk/debug/app-debug.apk'  # e.g., './build/app/outputs/flutter-apk/app-release.apk'
           groups: 'testing-group'  # Optional: distribution groups

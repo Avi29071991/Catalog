@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "898881059738",
+    "project_id": "long-adviser-447211-p0",
+    "storage_bucket": "long-adviser-447211-p0.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:898881059738:android:34dbaf99c585cce9bdd823",
+        "android_client_info": {
+          "package_name": "com.avinash.zapcom.demo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAl0K3kTN0ubi6vj-37wZS9-1i9QWV_An4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

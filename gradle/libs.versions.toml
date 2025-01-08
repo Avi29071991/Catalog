@@ -1,28 +1,32 @@
 [versions]
-agp = "8.2.1"
-kotlin = "1.9.0"
-core-ktx = "1.13.1"
+agp = "8.2.2"
+firebaseBom = "33.7.0"
+kotlin = "2.1.0"
+core-ktx = "1.15.0"
 junit = "4.13.2"
 androidx-test-ext-junit = "1.2.1"
 espresso-core = "3.6.1"
-rxJava = "3.0.0"
+rxJava = "3.1.8"
+rxandroid = "3.0.2"
 rxjava-adapter = "2.11.0"
-retrofit = "2.9.0"
-okHttp = "4.9.0"
-coil = "2.6.0"
-composeRuntime = "2.6.2"
+retrofit = "2.11.0"
+okHttp = "4.12.0"
+coil = "2.7.0"
+composeRuntime = "2.8.7"
 shimmerPlaceHolder = "0.32.0"
-hilt = "2.48"
+hilt = "2.54"
 mockito = "3.4.4"
-hiltWorker = "1.0.0"
-workRuntimeKtx = "2.7.0"
-archCoreTesting = "2.1.0"
-lifecycle-runtime-ktx = "2.8.4"
-activity-compose = "1.9.1"
-compose-bom = "2023.08.00"
+hiltWorker = "1.2.0"
+workRuntimeKtx = "2.10.0"
+archCoreTesting = "2.2.0"
+lifecycle-runtime-ktx = "2.8.7"
+activity-compose = "1.9.3"
+compose-bom = "2024.12.01"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
+firebase-analytics = { module = "com.google.firebase:firebase-analytics" }
+firebase-bom = { module = "com.google.firebase:firebase-bom", version.ref = "firebaseBom" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
 mockWebServer = { group = "com.squareup.okhttp3", name = "mockwebserver", version.ref = "okHttp" }
@@ -44,7 +48,7 @@ retrofitAdapter = { group = "com.squareup.retrofit2", name = "adapter-rxjava3", 
 rxJava = { group = "io.reactivex.rxjava3", name = "rxjava", version.ref = "rxJava"}
 okHttpLogging = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okHttp"}
 coilCompose = { group="io.coil-kt", name= "coil-compose", version.ref = "coil" }
-rxAndroid = { group = "io.reactivex.rxjava3", name ="rxandroid", version.ref = "rxJava"}
+rxAndroid = { group = "io.reactivex.rxjava3", name ="rxandroid", version.ref = "rxandroid"}
 hilt = { group = "com.google.dagger", name="hilt-android", version.ref = "hilt"}
 hiltCompiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt"}
 hiltAndroidCompiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt"}
@@ -59,5 +63,5 @@ androidApplication = { id = "com.android.application", version.ref = "agp" }
 kotlinAndroid = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
 hiltPlugin = { id = "com.google.dagger.hilt.android", version.ref = "hilt"}
-
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 

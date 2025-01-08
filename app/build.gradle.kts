@@ -4,16 +4,18 @@ plugins {
     alias(libs.plugins.kotlinAndroid)
     alias(libs.plugins.kapt)
     alias(libs.plugins.hiltPlugin)
+    id("com.google.gms.google-services")
+    alias(libs.plugins.compose.compiler)
 }
 
 android {
     namespace = "com.avinash.zapcom.demo"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.avinash.zapcom.demo"
         minSdk = 26
-        targetSdk = 34
+        targetSdk = 35
         versionCode = 1
         versionName = "1.0"
 
@@ -23,34 +25,35 @@ android {
         }
     }
 
+    signingConfigs {
+        create("test") {
+            keyAlias = "debug_alias"
+            keyPassword = "debug_alias"
+            storeFile = file("secret/debug.keystore")
+            storePassword = "debugkey"
+        }
+    }
+
     buildTypes {
         debug {
             versionNameSuffix = "Debug"
             isDebuggable = true
             enableUnitTestCoverage = true
             enableAndroidTestCoverage = true
-        }
-        release {
-            isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+            signingConfig = signingConfigs.getByName("test")
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
     buildFeatures {
         compose = true
     }
-    composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
-    }
+
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
@@ -82,11 +85,15 @@ dependencies {
     implementation(libs.placeHolder)
     implementation(libs.composeRuntime)
 
+    implementation(platform(libs.firebase.bom))
+    implementation(libs.firebase.analytics)
+
     // Dependencies for Hilt
     implementation(libs.hilt)
     kapt(libs.hiltCompiler)
     androidTestImplementation(libs.hiltAndroidTesting) // For instrumented tests.
     kaptAndroidTest(libs.hiltAndroidCompiler) // ...with Kotlin.
+//    kapt("org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.5.0")
     implementation(libs.hiltWork)
     implementation(libs.workRunTimeKtx)
 
@@ -99,4 +106,8 @@ dependencies {
     androidTestImplementation(libs.archCoreTesting)
     debugImplementation(libs.ui.tooling)
     debugImplementation(libs.ui.test.manifest)
+}
+
+kapt {
+    correctErrorTypes = true
 }

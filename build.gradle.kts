@@ -5,5 +5,7 @@ plugins {
     alias(libs.plugins.kotlinAndroid) apply false
     alias(libs.plugins.kapt) apply false
     alias(libs.plugins.hiltPlugin) apply false
+    id("com.google.gms.google-services") version "4.4.2" apply false
+    alias(libs.plugins.compose.compiler) apply false
 }
 true // Needed to make the Suppress annotation work for the plugins block
