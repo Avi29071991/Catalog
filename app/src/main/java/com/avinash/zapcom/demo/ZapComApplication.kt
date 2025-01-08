@@ -7,17 +7,17 @@ import dagger.hilt.android.HiltAndroidApp
 import javax.inject.Inject
 
 @HiltAndroidApp
-class ZapComApplication: Application(), Configuration.Provider {
+class ZapComApplication: Application(){
 
-    @Inject
-    lateinit var workerFactory: HiltWorkerFactory
+//    @Inject
+//    lateinit var workerFactory: HiltWorkerFactory
 
     override fun onCreate() {
         super.onCreate()
     }
 
-    override val workManagerConfiguration: Configuration
-        get() = Configuration.Builder()
-            .setWorkerFactory(workerFactory)
-            .build()
+//    override val workManagerConfiguration: Configuration
+//        get() = Configuration.Builder()
+//            .setWorkerFactory(workerFactory)
+//            .build()
 }

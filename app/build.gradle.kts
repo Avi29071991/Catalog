@@ -26,7 +26,7 @@ android {
     }
 
     signingConfigs {
-        create("test") {
+        create("release") {
             keyAlias = "debug_alias"
             keyPassword = "debug_alias"
             storeFile = file("secret/debug.keystore")
@@ -40,7 +40,15 @@ android {
             isDebuggable = true
             enableUnitTestCoverage = true
             enableAndroidTestCoverage = true
-            signingConfig = signingConfigs.getByName("test")
+        }
+
+        release {
+            isMinifyEnabled = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+            signingConfig = signingConfigs.getByName("release")
         }
     }
     compileOptions {
