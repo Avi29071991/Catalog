@@ -6,7 +6,6 @@ import androidx.work.Configuration
 import dagger.hilt.android.HiltAndroidApp
 import javax.inject.Inject
 
-// Application class
 @HiltAndroidApp
 class ZapComApplication: Application(){
 
